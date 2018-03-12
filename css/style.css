@@ -180,13 +180,10 @@ h2 {
     height: 100%;
     text-transform: uppercase;
 }
-
-
 #map {
-    padding: 5px 0px 5px 0px;
-
-}
-
+    height: 100%;
+    border: 1px solid grey; 
+  }
 .rightText p:first-child {
     padding: 125px 0 26px 0;
 }
@@ -220,16 +217,13 @@ width: 700px;
 }
 #fter {
     background-color: black;
-    color: #474747;
+    color: #d0c9c9;
     font-weight: bold;
     height: 300px;
     line-height: 40px;
 }
 #fter img {
     padding: 10px 0 35px 0;
-}
-#fter .foo2 {
-    text-decoration: underline;
 }
 .box {
     width: 25%;
@@ -246,7 +240,7 @@ width: 700px;
     list-style: none;
     font-size: 16px;
     font-weight: 400;
-    color: #474747;
+    color: #d0c9c9;
 }
 .box1 {
     width: 25%;

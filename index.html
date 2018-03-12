@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <title>Los Pollos Hermanos. You welcome!</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
+
 <body>
     <section id="welcome">
         <div class="container">
@@ -15,9 +17,15 @@
                 </div>
                 <nav class="navigation">
                     <ul class="menu">
-                        <li><a class="active" href="#fter">Contact</a></li>
-                        <li><a href="#menu1">Menu</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li>
+                            <a class="active" href="#fter">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#menu1">Menu</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -25,41 +33,120 @@
                 <p class="smallfont">Hungry?</p>
                 <h1>The best chicken is on your way</h1>
                 <div class="button">
-                    <p><a href="#fter">Contact us to order</a></p>
+                    <p>
+                        <a href="#fter">Contact us to order</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <section id="about">
         <article class="container">
-        <div class="col-1" id="leftText">
-            <img class="transform-img" src="images/taste.png" alt="taste">
-        </div>
+            <div class="col-1" id="leftText">
+                <img class="transform-img" src="images/taste.png" alt="taste">
+            </div>
             <div class="col-2" id="rightText">
                 <p>Don't hesitate! We have the best chicken. Everything is always fresh. From the best suppliers... </p>
-                <p>The finest ingredients are brought together with love and care, then slow cooked to perfection. Yes, the old ways are still best at Los Pollos Hermanos. But don't take my word for it. One taste, and you'll know...</p>
+                <p>The finest ingredients are brought together with love and care, then slow cooked to perfection. Yes, the
+                    old ways are still best at Los Pollos Hermanos. But don't take my word for it. One taste, and you'll
+                    know...
+                </p>
             </div>
         </article>
     </section>
     <section id="menu1">
         <article class="container">
-        <div class="col-1" id="leftText">
-        <h2>CHECK OUT OUR MENU</h2>
-        </div>
-        <div class="col-2" id="rightText1">
-            <img class="menu-img" src="images/menu1.jpg" alt="menu">
+            <div class="col-1" id="leftText">
+                <h2>CHECK OUT OUR MENU</h2>
+            </div>
+            <div class="col-2" id="rightText1">
+                <img class="menu-img" src="images/menu1.jpg" alt="menu">
             </div>
         </article>
     </section>
     <section id="location">
         <article class="container">
-        <div class="col-1" id="leftText">
-            <h2>Location</h2>
+            <div class="col-1" id="leftText">
+                <h2>Location</h2>
             </div>
-            <div class="col-2" id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417918.1812178791!2d-106.95666700318816!3d35.08208777881573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220addd309837b%3A0xc0d3f8ceb8d9f6fd!2sAlbuquerque%2C+Nowy+Meksyk%2C+Stany+Zjednoczone!5e0!3m2!1spl!2spl!4v1478639497610"
-                    width="100%" height="490px" frameborder="0" style="border:5" allowfullscreen></iframe>
-            </div>
+            <!-- Customizing Google Map with animation marker -->
+            <div class="col-2" id="map"></div>
+            <script>
+                var marker;
+
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 13,
+                        center: {
+                            lat: 35.110833,
+                            lng: -106.61
+                        }
+                    });
+                    // main marker
+                    marker = new google.maps.Marker({
+                        map: map,
+                        draggable: true,
+                        animation: google.maps.Animation.DROP,
+                        position: {
+                            lat: 35.0843187,
+                            lng: -106.6197812
+                        },
+                        title: "Los Pollos Hermanos is here!"
+                    });
+                    marker.addListener('click', toggleBounce);
+                    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+                    var icons = {
+                        parking: {
+                            icon: iconBase + 'parking_lot_maps.png'
+                        },
+                        bus: {
+                            icon: iconBase + 'bus_maps.png'
+                        },
+                        theatre: {
+                            icon: iconBase + 'arts_maps.png'
+                        },
+                        rec_gas_stations: {
+                            icon: iconBase + 'rec_gas_stations.png'
+                        },
+                        rec_lodging: {
+                            icon: iconBase + 'rec_lodging.png'
+                        }
+                    };
+                    var features = [{
+                        position: new google.maps.LatLng(35.0848, -106.649),
+                        type: 'theatre'
+                    }, {
+                        position: new google.maps.LatLng(35.0842, -106.615),
+                        type: 'parking'
+                    }, {
+                        position: new google.maps.LatLng(35.0968, -106.603),
+                        type: 'bus'
+                    }, {
+                        position: new google.maps.LatLng(35.0968, -106.619),
+                        type: 'rec_gas_stations'
+                    }, {
+                        position: new google.maps.LatLng(35.0968, -106.595),
+                        type: 'rec_lodging'
+                    }];
+                    // Create markers
+                    features.forEach(function (feature) {
+                        var marker = new google.maps.Marker({
+                            position: feature.position,
+                            icon: icons[feature.type].icon,
+                            map: map
+                        });
+                    });
+                }
+                function toggleBounce() {
+                    if (marker.getAnimation() !== null) {
+                        marker.setAnimation(null);
+                    } else {
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                }
+            </script>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417918.1812178791!2d-106.95666700318816!3d35.08208777881573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220addd309837b%3A0xc0d3f8ceb8d9f6fd!2sAlbuquerque%2C+Nowy+Meksyk%2C+Stany+Zjednoczone!5e0!3m2!1spl!2spl!4v1478639497610"
+                    width="100%" height="490px" frameborder="0" style="border:5" allowfullscreen></iframe> -->
         </article>
     </section>
     <section id="fter">
@@ -70,23 +157,27 @@
                     <li>7 days a week for breakfast, lunch and dinner.</li>
                 </ul>
             </div>
-            <div class="box">            
+            <div class="box">
                 <ul class="foo2">Contact Us
                     <li>Phone : (123)-456-7890</li>
                     <li>lospollos@gmail.com</li>
-                     <li>Address : 606 Retail Way Albuquerque, NC 21765</li>
+                    <li>Address : 606 Retail Way Albuquerque, NC 21765</li>
                 </ul>
             </div>
             <div class="box"></div>
             <div class="box1">
-                <p>Copyright &copy;2017 Kario</p>
+                <p>Copyright &copy;2018 Kari The Unicorn</p>
             </div>
             <a href="#" class="scrollToTop">
-          <img src="images/up-arrow.png" alt="scroll_to_Top">
-          </a>
+                <img src="images/up-arrow.png" alt="scroll_to_Top">
+            </a>
         </footer>
     </section>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/js.js"></script>
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyBk2ozejHVDImVIAgSlKj8RF7KzqBYVr8A&callback=initMap">
+    </script>
 </body>
+
 </html>
