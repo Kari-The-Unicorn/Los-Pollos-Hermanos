@@ -91,52 +91,75 @@
                             lat: 35.0843187,
                             lng: -106.6197812
                         },
-                        title: "Los Pollos Hermanos is here!"
+                        title: "Los Pollos Hermanos is here!",
                     });
                     marker.addListener('click', toggleBounce);
                     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
                     var icons = {
                         parking: {
-                            icon: iconBase + 'parking_lot_maps.png'
+                            url: iconBase + 'parking_lot_maps.png',
+                            scaledSize: new google.maps.Size(32, 32),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 0)
                         },
                         bus: {
-                            icon: iconBase + 'bus_maps.png'
+                            url: iconBase + 'bus_maps.png',
+                            scaledSize: new google.maps.Size(32, 32),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 0)
                         },
                         theatre: {
-                            icon: iconBase + 'arts_maps.png'
+                            url: iconBase + 'arts_maps.png',
+                            scaledSize: new google.maps.Size(32, 32),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 0)
                         },
                         rec_gas_stations: {
-                            icon: iconBase + 'rec_gas_stations.png'
+                            url: iconBase + 'rec_gas_stations.png',
+                            scaledSize: new google.maps.Size(32, 32),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 0)
                         },
                         rec_lodging: {
-                            icon: iconBase + 'rec_lodging.png'
+                            url: iconBase + 'rec_lodging.png',
+                            scaledSize: new google.maps.Size(32, 32),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 0)
                         }
                     };
                     var features = [{
                         position: new google.maps.LatLng(35.0848, -106.649),
-                        type: 'theatre'
+                        type: 'theatre',
+                        title: "Theatre is here!"
                     }, {
                         position: new google.maps.LatLng(35.0842, -106.615),
-                        type: 'parking'
+                        type: 'parking',
+                        title: "Parking is here!",
+
                     }, {
                         position: new google.maps.LatLng(35.0968, -106.603),
-                        type: 'bus'
+                        type: 'bus',
+                        title: "Bus is here!"
                     }, {
                         position: new google.maps.LatLng(35.0968, -106.619),
-                        type: 'rec_gas_stations'
+                        type: 'rec_gas_stations',
+                        title: "Petrol station is here!"
                     }, {
                         position: new google.maps.LatLng(35.0968, -106.595),
-                        type: 'rec_lodging'
+                        type: 'rec_lodging',
+                        title: "Hotel is here!"
                     }];
                     // Create markers
                     features.forEach(function (feature) {
                         var marker = new google.maps.Marker({
                             position: feature.position,
-                            icon: icons[feature.type].icon,
+                            title: feature.title,
+                            icon: icons[feature.type],
                             map: map
                         });
                     });
                 }
+
                 function toggleBounce() {
                     if (marker.getAnimation() !== null) {
                         marker.setAnimation(null);
