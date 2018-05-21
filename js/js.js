@@ -13,13 +13,4 @@ $(document).ready(function () {
 		}, 800);
 		return false;
 	});
-	//restaurant's menu bigger
-	$(function () {
-		var myMenu = $('.menu-img');
-		myMenu.on("mouseover", function () {
-			$(this).addClass("menu-bigimg"); //
-		}).on("mouseout", function () {
-			$(this).removeClass("menu-bigimg");
-		})
-	});
 });

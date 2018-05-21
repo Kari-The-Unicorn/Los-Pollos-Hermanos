@@ -93,6 +93,12 @@ body {
         .viewMore {
             padding-top: 50px;
         }
+        .box_menu_img{
+             height: auto; 
+            width: 13%;
+            /*height: 40%;
+            width: 23%;*/
+        }
     }
     #welcome {
         background-position: center;
@@ -199,12 +205,154 @@ body {
     }
     #menu1 {
         background-color: lightgrey;
-        height: 500px;
+        height: 1200px;
+        width: 100%;
+        padding: 45px 0px 0px 0px;
+    }
+    .container_menu{
+        background-color: lightgrey;
+        margin: 0 auto;
+        height: 100%;
         width: 100%;
     }
-    .menu-bigimg {
+    .box_main_text{
+        background-color: lightgrey;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+    }
+    .box_menu1{
+        background-color: darkblue;
+        /*height: 40%;*/
+        /*height: auto;*/
+        height: 40%;
+        width: 33.3%;
+        float: left;
+        padding: 15px 15px 15px 15px;
+        border: 4px solid orange;
+        color: white;
+        line-height: 1.2;
+    }
+    .box_burrito{
+        height: 15%; 
+        width: 100%;
+        border: 3px solid orange;
+        border-radius: 5%;
+        background-color: white;
+    }
+    .img_burrito{
+        width: 20%;
+        max-width: auto;
         height: auto;
-        width: 700px;
+        max-height: 100%;
+    }
+    .burrito_header{
+        background-color: lightblue;
+        width: 75%;
+        height: 100%; 
+        float: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 150%;
+        display: table;
+    }
+    .burrito_header p {
+        text-align:center; 
+        vertical-align: middle;
+        display: table-cell;  
+    }
+    .p_span{
+        text-decoration: bold;
+        font-size: 165%;
+        margin: 20px;
+    }
+    .box_chicken{
+        height: 15%; 
+        width: 100%;
+        border: 3px solid yellow;
+        border-radius: 5%;
+        background-color: white;
+    }
+.img_chicken {
+        width: 20%;
+        max-width: auto;
+        height: auto;
+        max-height: 100%;
+        float: right;
+}
+
+    .chicken_header{
+        background-color: lightblue;
+        width: 75%;
+        height: 100%; 
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 150%;
+        display: table;
+    }
+    .chicken_header p {
+        text-align:center; 
+        vertical-align: middle;
+        display: table-cell;  
+    }
+    .box_menu_img{
+        background-color: #404040;
+        max-height: 40%;
+        width: 33.3%;
+        float: left;
+       padding: 20px 15px 15px 15px;
+        border: 4px solid maroon;
+        line-height: 1.2;
+        /*max-height: 100%; 
+        width: auto;*/
+    }
+    .menu-img {
+        display: block;
+        margin: auto;
+        height:100%;
+        width: auto;
+    }
+    .box_menu3{
+        background-color: red;
+        height: 40%;
+      /*height: auto;*/
+        width: 33.3%;
+        float: left;
+        padding: 15px 15px 15px 15px;
+        border: 4px solid green;
+        color: white;
+        line-height: 1.2;
+    }
+    .box_menu4{
+        background-color: red;
+        height: 40%;
+        width: 33.3%;
+        float: left;
+        padding: 15px 15px 15px 15px;
+        border: 4px solid yellow;
+        color: white;
+        line-height: 1.2;
+    }
+    .box_menu5{
+        background-color: green;
+        height: 40%;
+        width: 33.3%;
+        float: left;
+        padding: 15px 15px 15px 15px;
+        border: 4px solid blue;
+        color: white;
+        line-height: 1.2;
+    }
+    .box_menu6{
+        background-color: orange;
+        height: 40%;
+        width: 33.3%;
+        float: left;
+        padding: 15px 15px 15px 15px;
+        border: 4px solid green;
+        color: white;
+        line-height: 1.2;
     }
     #location {
         background-color: white;
